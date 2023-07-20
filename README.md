@@ -3,7 +3,7 @@
 ## Terms
 
 - Feature: a category of data points that affect the value of a _label_. Independent variable.
-- Label: The output of our algorithm
+- Label: The dependent variable.
 - Classification: The value of our labels belong to a _discrete_ set. A discrete set is a small number of possible values. (ex: spam, not spam, maybe spam)
 - Regression: The value of our labels belong to a _continuous_ set. A continuous set is usually a range between two bounds. (ex: $1-$1,000,000.00, 1lb-500lb)
 
@@ -17,4 +17,20 @@
 
 ## Plinko
 
-A ball is dropped into a board with staggered peggs and 10 buckets. Given the balls starting point, how bouncy it is, and how large it is, which bucket is the ball most likely to fall into? Here, the features are the drop point, the bouncincess, and the size.
+A ball is dropped into a board with staggered peggs and 10 buckets. Given the balls starting point, how bouncy it is, and how large it is, which bucket is the ball most likely to fall into? Here, the features are the drop point, the bouncincess, and the size. The label is the bucket.
+
+### Problem Solving
+
+_Question_: Which bucket will a ball go into if dropped at 300px?
+
+1. Drop a bunch of balls all around the board and see which bucket the balls go into.
+2. For each observation, subtract drop point from 300px, take absolute value.
+3. Sort the results from step 2 from least to greatest.
+4. Look at the top 'k' top records. What was the most common bucket?
+5. Whichever bucket came up most frequently is the one our will probably go into.
+
+## K-Nearest Neighbor
+
+"Birds of a feather flock together." If you have a bunch of birds sitting together, and they are all the same type of birds, and a new bird flies to that group and it looks similar, then it is probably the same bird.
+
+Reference plinko/score.js.
